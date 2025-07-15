@@ -30,11 +30,13 @@ Fixed::~Fixed( void )
 Fixed::Fixed( int const n )
 {
 	std::cout << "Int constructor called" << std::endl;
+	this->_value = n << _fraction;
 }
 
 Fixed::Fixed( float const f )
 {
 	std::cout << "Float constructor called" << std::endl;
+	this->_value = roundf(f * (1 << _fraction));
 }
 
 // MEMBER FUNCTIONS
@@ -51,16 +53,17 @@ void	Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat( void ) const
 {
-
+	return (static_cast<float>(this->_value) / (1 << this->_fraction));
 }
 
 int		Fixed::toInt( void ) const
 {
-
+	return (this->_value >> this->_fraction);
 }
 
 // OPERATOR << OVERLOAD
 std::ostream&	operator<<( std::ostream& out, Fixed const & rhs )
 {
-	
+	out << rhs.toFloat();
+	return (out);
 }
