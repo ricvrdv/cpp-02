@@ -15,8 +15,8 @@ class	Fixed
         Fixed( void );
         Fixed(int const n);
         Fixed( float const f );
-        Fixed(Fixed const & src );
-        Fixed&  operator=( Fixed const & rhs );
+        Fixed(Fixed const &other );
+        Fixed&  operator=( Fixed const &other );
         ~Fixed( void );
         
         int		getRawBits( void ) const;
@@ -25,6 +25,6 @@ class	Fixed
         int     toInt( void ) const;
 };
 
-std::ostream&	operator<<( std::ostream& out, Fixed const & rhs );
+std::ostream&	operator<<( std::ostream& out, Fixed const &rhs );
 
 #endif
