@@ -62,6 +62,108 @@ int		Fixed::toInt( void ) const
 	return (this->_value >> this->_fraction);
 }
 
+// COMPARISON OPERATORS
+bool    Fixed::operator>(Fixed const &other) const
+{
+	return (this->_value > other._value);
+}
+
+bool    Fixed::operator<(Fixed const &other) const
+{
+	return (this->_value < other._value);
+}
+
+bool    Fixed::operator>=(Fixed const &other) const
+{
+	return (this->_value >= other._value);
+}
+
+bool    Fixed::operator<=(Fixed const &other) const
+{
+	return (this->_value <= other._value);
+}
+
+bool    Fixed::operator==(Fixed const &other) const
+{
+	return (this->_value == other._value);
+}
+
+bool    Fixed::operator!=(Fixed const &other) const
+{
+	return (this->_value != other._value);
+}
+
+// ARITHMETIC OPERATORS
+Fixed   Fixed::operator+(Fixed const &other) const
+{
+	Fixed	temp;
+
+	temp.setRawBits(this->_value + other._value);
+	return (temp);
+}
+
+Fixed   Fixed::operator-(Fixed const &other) const
+{
+	Fixed	temp;
+
+	temp.setRawBits(this->_value - other._value);
+	return (temp);
+}
+
+Fixed   Fixed::operator*(Fixed const &other) const
+{
+	Fixed		temp;
+	long long	res;
+
+	res = static_cast<long long>(this->_value * other._value);
+	temp.setRawBits(res >> _fraction);
+	return (temp);
+}
+
+Fixed   Fixed::operator/(Fixed const &other) const
+{
+	if (other._value == 0)
+	{
+		std::cerr << "Division by zero!" << std::endl;
+		exit(1);
+	}
+	Fixed		temp;
+	long long	num;
+
+	num = static_cast<long long>(this->_value) << this->_fraction;
+	temp.setRawBits(num / other._value);
+	return (temp);
+}
+
+// INCREMENT / DECREMENT
+Fixed&  Fixed::operator++()
+{
+	this->_value++;
+	return (*this);
+}
+
+Fixed   Fixed::operator++(int)
+{
+	Fixed	temp(*this);
+
+	this->_value++;
+	return (temp);
+}
+
+Fixed&  Fixed::operator--()
+{
+	this->_value--;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed	temp(*this);
+
+	this->_value--;
+	return (temp);
+}
+
 // OPERATOR << OVERLOAD
 std::ostream&	operator<<( std::ostream& out, Fixed const & rhs )
 {
