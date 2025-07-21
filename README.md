@@ -6,6 +6,6 @@
 - Fixed-point numbers
 
 ----
-✅ Check out [C++ Module 03]() -
+✅ Check out [C++ Module 03](https://github.com/ricvrdv/cpp-03) - inheritance between classes
 
 ⏪️ Go back to [C++ Module 01](https://github.com/ricvrdv/cpp-01) -  new, delete, references, file manipulation
