@@ -137,7 +137,7 @@ Fixed   Fixed::operator/( Fixed const &other ) const
 	if (other._storedValue == 0)
 	{
 		std::cerr << "Division by zero!" << std::endl;
-		exit(1);
+		std::exit(1);
 	}
 	Fixed		temp;
 	long long	num;

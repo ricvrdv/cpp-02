@@ -14,6 +14,7 @@
 # define FIXED_HPP
 
 # include <iostream>
+# include <cstdlib>
 # include <cmath>
 
 class	Fixed
