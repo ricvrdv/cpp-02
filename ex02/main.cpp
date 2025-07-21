@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rjesus-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/21 11:06:27 by rjesus-d          #+#    #+#             */
+/*   Updated: 2025/07/21 11:06:29 by rjesus-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 int main( void )
@@ -24,7 +36,7 @@ int main( void )
 		Fixed c(2.5f);
 		Fixed d;
 
-		std::cout << "a = " << a << ", b = " << b << ", c = " << c << std::endl;
+		std::cout << "a = " << a << ", b = " << b << ", c = " << c << ", d = " << d << std::endl;
 		std::cout << "------ Comparison ------" << std::endl;
 		std::cout << "a < b: " << (a < b) << std::endl;
 		std::cout << "a > b: " << (a > b) << std::endl;
@@ -58,11 +70,11 @@ int main( void )
 		const Fixed& cmin = Fixed::min(ca, cb);
 		const Fixed& cmax = Fixed::max(ca, cb);
 
-		std::cout << "min(a, b): " << minRef << std::endl;
-		std::cout << "max(a, b): " << maxRef << std::endl;
+		std::cout << "min(a, b)= " << minRef << std::endl;
+		std::cout << "max(a, b)= " << maxRef << std::endl;
 		std::cout << "ca = " << ca << ", cb = " << cb << std::endl;
-		std::cout << "const min(ca, cb): " << cmin << std::endl;
-		std::cout << "const max(ca, cb): " << cmax << std::endl;
+		std::cout << "const min(ca, cb)= " << cmin << std::endl;
+		std::cout << "const max(ca, cb)= " << cmax << std::endl;
 	}
     return (0);
 }
