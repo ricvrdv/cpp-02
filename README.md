@@ -19,7 +19,27 @@ make
 
 # ex01
 
+Extended the `Fixed` class with `int` and `float` constructors, conversion methods (`toInt`, `toFloat`), and stream output overloading to represent fixed-point numbers more meaningfully.`
+
+Usage:
+```
+make
+```
+```
+./fixed
+```
+
 # ex02
+
+Enhanced the `Fixed` class with overloaded comparison, arithmetic, and increment/decrement operators, plus static `min`/`max` functions, enabling natural mathematical operations between fixed-point objects.
+
+Usage:
+```
+make
+```
+```
+./fixed
+```
 
 ----
 ✅ Check out [C++ Module 03](https://github.com/ricvrdv/cpp-03) - inheritance between classes
